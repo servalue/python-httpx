@@ -18,7 +18,10 @@ async def test_get_users():  # тест на получение списка п�
         )  # await - ожидаем ответа от сервера
 
         rprint(
-            "\n📋 [blue]Response status code:[/blue]", response.status_code
+            "\n📋 [blue]Response url:[/blue]", response.url
+        )  # выводим url
+        rprint(
+            "📋 [blue]Response status code:[/blue]", response.status_code
         )  # выводим статус код
 
         # проверяем схему через pydantic модель
@@ -42,7 +45,7 @@ async def test_get_users():  # тест на получение списка п�
             "Проверка количества пользователей на странице"
         ).is_equal_to(2)
 
-        # rprint("\n📋 [blue]Response data:[/blue]\n", JSON.from_data(response.json()))   # выводим данные
+        rprint("\n📋 [blue]Response data:[/blue]\n", JSON.from_data(response.json()))   # выводим данные
 
 
 # ------------------------------------------------------------------------------------------------
@@ -55,7 +58,10 @@ async def test_get_single_user():
         )
 
         rprint(
-            "\n📋 [blue]Response status code:[/blue]", response.status_code
+            "\n📋 [blue]Response url:[/blue]", response.url
+        )  # выводим url
+        rprint(
+            "📋 [blue]Response status code:[/blue]", response.status_code
         )  # выводим статус код
 
         # проверяем схему через pydantic модель
@@ -90,4 +96,4 @@ async def test_get_single_user():
             "Tired of writing endless social media content? Let Content Caddy generate it for you."
         )
 
-        # rprint("\n📋 [blue]Response data:[/blue]\n", JSON.from_data(response.json()))   # выводим данные
+        rprint("\n📋 [blue]Response data:[/blue]\n", JSON.from_data(response.json()))   # выводим данные
